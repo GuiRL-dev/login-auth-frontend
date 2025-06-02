@@ -36,15 +36,15 @@ export class Signup {
     })
   }
   submit(){
-    this.loginService.login(this.signupForm.value.email, this.signupForm.value.password).subscribe({
-      next: () => this.showSucess(),
+    this.loginService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
+      next: () => this.showSuccess(),
       error: () => this.showError()
     })
   }
   navigate(){
     this.router.navigate(["login"])
   }
-  showSucess(){
+  showSuccess(){
     this.toastr.success("Signup feito com sucesso")
   }
   showError(){
